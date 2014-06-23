@@ -1,6 +1,6 @@
 package com.enixer.dominionshuffler.cardlist;
 
-public class Card {
+public class Card implements Comparable<Card> {
 	private int id;
 	private int cost;
 	private boolean potion;
@@ -53,5 +53,10 @@ public class Card {
 
 	public void setVersion(String version) {
 		this.version = version;
+	}
+
+	@Override
+	public int compareTo(Card c) {
+		return this.id - c.id;
 	}
 }

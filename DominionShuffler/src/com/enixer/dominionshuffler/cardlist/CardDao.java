@@ -1,5 +1,6 @@
 package com.enixer.dominionshuffler.cardlist;
 
+import java.io.File;
 import java.io.InputStream;
 import java.util.Scanner;
 
@@ -8,6 +9,7 @@ import android.content.Context;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class CardDao {
@@ -16,6 +18,7 @@ public class CardDao {
 	private Scanner scanner;
 	private DominionShufflerDatabaseHelper helper;
 	private SQLiteDatabase db;
+	private final File mDatabasePath;
 
 	public CardDao(Context context) {
 		super();
@@ -27,10 +30,10 @@ public class CardDao {
 		}
 		scanner = new Scanner(inputStream);
 		helper = new DominionShufflerDatabaseHelper(context);
-		createDatabase(context);
+		mDatabasePath = context.getDatabasePath(helper.getDBName());
 	}
 
-	private void createDatabase(Context context) {
+	public void createDatabase(Context context) {
 		db = helper.getWritableDatabase();
 		while (scanner.hasNext()) {
 			String data = scanner.next();
@@ -47,8 +50,39 @@ public class CardDao {
 
 	public Cursor getCardList() {
 		db = helper.getReadableDatabase();
-		return db.query(DominionShufflerDatabaseHelper.getTableName(), null,
-				null, null, null, null, null);
+		return db.query(helper.getTableName(), null, null, null, null, null,
+				null);
+	}
+
+	public boolean checkDataBaseExists() {
+		String dbPath = mDatabasePath.getAbsolutePath();
+
+		SQLiteDatabase checkDb = null;
+		try {
+			checkDb = SQLiteDatabase.openDatabase(dbPath, null,
+					SQLiteDatabase.OPEN_READONLY);
+		} catch (SQLiteException e) {
+			// データベースはまだ存在していない
+		}
+
+		if (checkDb == null) {
+			// データベースはまだ存在していない
+			return false;
+		}
+
+		int oldVersion = checkDb.getVersion();
+		int newVersion = helper.getDBVersion();
+
+		if (oldVersion == newVersion) {
+			// データベースは存在していて最新
+			checkDb.close();
+			return true;
+		}
+
+		// データベースが存在していて最新ではないので削除
+		File f = new File(dbPath);
+		f.delete();
+		return false;
 	}
 
 	static class DominionShufflerDatabaseHelper extends SQLiteOpenHelper {
@@ -72,8 +106,16 @@ public class CardDao {
 
 		}
 
-		public static String getTableName() {
+		public String getTableName() {
 			return TABLE_NAME;
+		}
+
+		public String getDBName() {
+			return DATABASE_NAME;
+		}
+
+		public int getDBVersion() {
+			return DATABASE_VERSION;
 		}
 
 	}

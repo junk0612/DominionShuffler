@@ -12,6 +12,14 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
+        android:onClick="onShuffleButtonClick"
         android:text="@string/shuffle" />
+
+    <ListView
+        android:id="@+id/cardList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/selectButton"
+        android:layout_alignParentTop="true" />
 
 </RelativeLayout>

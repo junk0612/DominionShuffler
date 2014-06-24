@@ -246,15 +246,16 @@ int id action_context_bar 0x7f05001d
 int id action_menu_divider 0x7f050016
 int id action_menu_presenter 0x7f050017
 int id action_mode_close_button 0x7f050024
-int id action_settings 0x7f050044
+int id action_settings 0x7f050045
 int id activity_chooser_view_content 0x7f050025
+int id addition 0x7f050042
+int id additionTitle 0x7f050043
 int id always 0x7f05000b
 int id beginning 0x7f050011
-int id cardList 0x7f050043
+int id cardList 0x7f050044
 int id card_list_item 0x7f05003c
 int id checkbox 0x7f05002d
 int id collapseActionView 0x7f05000d
-int id container 0x7f050041
 int id costText 0x7f05003e
 int id default_activity_button 0x7f050028
 int id dialog 0x7f05000e
@@ -290,7 +291,7 @@ int id search_mag_icon 0x7f050035
 int id search_plate 0x7f050036
 int id search_src_text 0x7f050037
 int id search_voice_btn 0x7f05003b
-int id selectButton 0x7f050042
+int id selectButton 0x7f050041
 int id shortcut 0x7f05002e
 int id showCustom 0x7f050007
 int id showHome 0x7f050004
@@ -347,6 +348,7 @@ int string abc_searchview_description_voice 0x7f0a0008
 int string abc_shareactionprovider_share_with 0x7f0a000c
 int string abc_shareactionprovider_share_with_application 0x7f0a000b
 int string action_settings 0x7f0a000e
+int string addition 0x7f0a0010
 int string app_name 0x7f0a000d
 int string shuffle 0x7f0a000f
 int style AppBaseTheme 0x7f0b008b

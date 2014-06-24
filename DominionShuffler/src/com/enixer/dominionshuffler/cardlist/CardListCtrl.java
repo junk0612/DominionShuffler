@@ -10,23 +10,25 @@ import java.util.Set;
 import android.content.Context;
 
 public class CardListCtrl {
+	List<Card> cardList = new ArrayList<Card>();
+
 	public List<Card> getSelectedCards(Context context) {
 		List<Card> allCardList = new CardBizLogic().getAllCards(context);
-		List<Card> list = new ArrayList<Card>();
 		Set<Integer> set = new HashSet<Integer>();
 		Random rand = new Random(System.currentTimeMillis());
-		while (list.size() < 10) {
+		while (cardList.size() < 10) {
 			int s = allCardList.size();
 			int r = rand.nextInt(s);
 			if (set.add(r)) {
-				list.add(allCardList.get(r));
+				cardList.add(allCardList.get(r));
 			}
 		}
-		Collections.sort(list);
-		return list;
+		Collections.sort(cardList);
+		return cardList;
 	}
-	
-	public void createDatabase(Context context){
+
+	public void createDatabase(Context context) {
 		new CardBizLogic().createDatabase(context);
 	}
+
 }

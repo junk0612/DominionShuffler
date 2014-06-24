@@ -2,7 +2,8 @@
 <resources>
 
     <string name="app_name">DominionShuffler</string>
-    <string name="action_settings">Settings</string>
-    <string name="shuffle">SHUFFLE!</string>
+    <string name="action_settings">設定</string>
+    <string name="shuffle">シャッフル</string>
+    <string name="addition">追加で用意するもの</string>
 
 </resources>

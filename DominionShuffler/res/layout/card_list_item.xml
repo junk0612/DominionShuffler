@@ -10,7 +10,8 @@
         android:layout_height="wrap_content"
         android:gravity="right"
         android:paddingLeft="5dp"
-        android:paddingTop="5dp" />
+        android:paddingTop="5dp"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/costText"
@@ -19,7 +20,8 @@
         android:layout_toRightOf="@id/numberText"
         android:gravity="center"
         android:paddingLeft="5dp"
-        android:paddingTop="5dp" />
+        android:paddingTop="5dp"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/nameText"
@@ -28,7 +30,8 @@
         android:layout_toRightOf="@id/costText"
         android:gravity="left"
         android:paddingLeft="5dp"
-        android:paddingTop="5dp" />
+        android:paddingTop="5dp"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/versionText"
@@ -36,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:gravity="center"
-        android:padding="5dp" />
+        android:padding="5dp"
+        android:textSize="20sp" />
 
 </RelativeLayout>

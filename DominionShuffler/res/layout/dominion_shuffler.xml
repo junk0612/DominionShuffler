@@ -16,14 +16,18 @@
         android:id="@+id/addition"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/selectButton" />
+        android:layout_above="@id/selectButton"
+        android:clickable="false"
+        android:numColumns="3" />
 
     <TextView
         android:id="@+id/additionTitle"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/addition"
-        android:text="@string/addition" />
+        android:text="@string/addition"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ListView
         android:id="@+id/cardList"

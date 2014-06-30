@@ -9,15 +9,27 @@ import android.database.Cursor;
 public class CardBizLogic {
 	public List<Card> getAllCards(Context context) {
 		List<Card> list = new ArrayList<Card>();
-		Cursor cursor = new CardDao(context).getCardList();
+		CardDao dao = new CardDao(context);
+		Cursor cursor = dao.getCardList();
 		cursor.moveToFirst();
 		while (cursor.moveToNext()) {
-			int num = cursor.getInt(0);
-			int cost = cursor.getInt(1);
-			String potion = cursor.getString(2);
-			String name = cursor.getString(3);
-			String version = cursor.getString(4);
-			list.add(new Card(num, cost, potion.equals("T"), name, version));
+			int id = cursor.getInt(0);
+			String name = cursor.getString(1);
+			String version = cursor.getString(2);
+			int cost = cursor.getInt(3);
+			String potion = cursor.getString(4);
+			String classification = cursor.getString(5);
+			int treasure = cursor.getInt(6);
+			int vp = cursor.getInt(7);
+			int card = cursor.getInt(8);
+			int action = cursor.getInt(9);
+			int buy = cursor.getInt(10);
+			int coin = cursor.getInt(11);
+			int vpToken = cursor.getInt(12);
+			String description = cursor.getString(13);
+			list.add(new Card(id, name, version, cost, potion.equals("T"),
+					classification, treasure, vp, card, action, buy, coin,
+					vpToken, description));
 		}
 		return list;
 	}

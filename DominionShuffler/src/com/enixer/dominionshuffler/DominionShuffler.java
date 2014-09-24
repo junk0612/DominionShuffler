@@ -7,6 +7,7 @@ import com.enixer.dominionshuffler.cardlist.CardListCtrl;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
@@ -24,7 +25,8 @@ import android.widget.TextView;
 public class DominionShuffler extends Activity {
 	private List<Card> list;
 	private List<String> addList;
-	ListView lv;
+	private ProgressDialog progressDialog;
+	private ListView lv;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -184,4 +186,15 @@ public class DominionShuffler extends Activity {
 		}
 	}
 
+	public void setProgressDialog() {
+		progressDialog = new ProgressDialog(this);
+		progressDialog.setMessage("データベース構築中...");
+		progressDialog.setCancelable(false);
+		progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+		progressDialog.show();
+	}
+
+	public void dismissProgressDialog() {
+		progressDialog.dismiss();
+	}
 }

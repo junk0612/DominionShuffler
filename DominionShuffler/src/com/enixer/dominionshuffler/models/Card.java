@@ -1,4 +1,4 @@
-package com.enixer.dominionshuffler.cardlist;
+package com.enixer.dominionshuffler.models;
 
 public class Card implements Comparable<Card> {
 	private int id;

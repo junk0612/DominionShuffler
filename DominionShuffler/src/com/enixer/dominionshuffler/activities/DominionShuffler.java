@@ -1,9 +1,10 @@
-package com.enixer.dominionshuffler;
+package com.enixer.dominionshuffler.activities;
 
 import java.util.List;
 
-import com.enixer.dominionshuffler.cardlist.Card;
-import com.enixer.dominionshuffler.cardlist.CardListCtrl;
+import com.enixer.dominionshuffler.R;
+import com.enixer.dominionshuffler.models.Card;
+import com.enixer.dominionshuffler.services.CardListCtrl;
 
 import android.app.Activity;
 import android.app.AlertDialog;

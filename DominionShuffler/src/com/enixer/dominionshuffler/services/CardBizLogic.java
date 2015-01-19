@@ -1,7 +1,10 @@
-package com.enixer.dominionshuffler.cardlist;
+package com.enixer.dominionshuffler.services;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.enixer.dominionshuffler.daos.CardDao;
+import com.enixer.dominionshuffler.models.Card;
 
 import android.content.Context;
 import android.database.Cursor;

@@ -1,4 +1,4 @@
-package com.enixer.dominionshuffler.cardlist;
+package com.enixer.dominionshuffler.daos;
 
 import java.io.File;
 import java.io.InputStream;

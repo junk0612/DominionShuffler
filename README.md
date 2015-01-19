@@ -1,16 +1,17 @@
 DominionShuffler
----
+===
 
 ## This is:
-- a dominion supply generator for android
+- a Dominion supply generator for android
+    + Dominion is a famous card game. This is very fun!
 - a tool for confirmation of card text
 
 ## This is not:
-- a game application of playing with dominion
+- a game application of playing with Dominion
 
 ## Setup
-1. Download [Eclipse](https://eclipse.org/downloads/)
-    - Any versions are OK, but I recommend **for Java Developers** version.
+1. Download [Eclipse](https://eclipse.org/downloads/) and install
+    - Any versions are OK, but I recommend "**for Java Developers**" version.
 2. Install [ADT](http://developer.android.com/sdk/installing/installing-adt.html) into Eclipse
 3. Clone this repository
 4. Import "DominionShuffler" project into Eclipse
@@ -26,4 +27,4 @@ DominionShuffler
 ## Usage
 - Touch the "Shuffle" button
     + this is only. very easy! ;)
-
+- You can view the card text to long tap each card name

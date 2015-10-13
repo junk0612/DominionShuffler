@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DominionShuffler</string>
+    <string name="action_settings">設定</string>
+    <string name="shuffle">シャッフル</string>
+    <string name="addition">追加で用意するもの</string>
+
+</resources>
